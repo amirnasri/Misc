@@ -59,3 +59,5 @@ Given a set of number ranges, i.e. [1,5], [3,6], [7,9], write a program to merge
 “Check if all the leaves are at the same level in a binary tree”
 “sort a list of words alpha-numerically.”
 write a method that returns the most common character in a string.
+
+Nuts and bolts. A disorganized carpenter has a mixed pile of N nuts and N bolts. The goal is to find the corresponding pairs of nuts and bolts. Each nut fits exactly one bolt and each bolt fits exactly one nut. By fitting a nut and a bolt together, the carpenter can see which one is bigger (but the carpenter cannot compare two nuts or two bolts directly). Design an algorithm for the problem that uses NlogN compares (probabilistically).
