@@ -7,6 +7,7 @@ package src;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Find_path_min_maze {
 	
@@ -15,8 +16,7 @@ public class Find_path_min_maze {
 
     static int[][] matrix;
 	// Matrix dimensions
-	static final int m = 10;
-	static final int n = 10;
+	static int m, n;
 	
     
     static class Node {
@@ -127,6 +127,12 @@ public class Find_path_min_maze {
 	
 	public static void main(String[] args) {
 
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Enter m: ");
+		m = scanner.nextInt();
+		System.out.print("Enter n: ");
+		n = scanner.nextInt();
+		scanner.close();
 		Random rand_gen = new Random();
 		matrix = new int[m][n];
 		for (int i=0; i < m; i++) {
