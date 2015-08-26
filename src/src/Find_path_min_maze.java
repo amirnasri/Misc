@@ -15,8 +15,8 @@ public class Find_path_min_maze {
     private final static String setBoldText = "\033[0;1m";
 
     static int[][] matrix;
-	// Matrix dimensions
-	static int m, n;
+    // Matrix dimensions
+    static int m, n;
 	
     
     static class Node {
