@@ -1,5 +1,4 @@
-
-public class Linked_list<T> implements Iterable<T>{
+public class Linked_list<T> {
 	
 	Node head;
 	
@@ -73,12 +72,6 @@ public class Linked_list<T> implements Iterable<T>{
 	
 	public static void main(String[] args) {
 		
-	}
-
-	@Override
-	public java.util.Iterator<T> iterator() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

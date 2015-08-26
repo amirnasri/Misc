@@ -1,4 +1,5 @@
 
+
 public class Binary_search {
 	
 	static int binary_search(int key, int[] array) {
