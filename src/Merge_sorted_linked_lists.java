@@ -36,18 +36,7 @@ public class Merge_sorted_linked_lists {
 	static void merge(LinkedList<Integer> l1, LinkedList<Integer> l2, LinkedList<Integer> l3) {
 		Peekable_iterator<Integer> pit1 = new Peekable_iterator<>(l1.listIterator());
 		Peekable_iterator<Integer> pit2 = new Peekable_iterator<>(l2.listIterator());
-		/*
-		while (it1.hasNext()) {
-			System.out.print(it1.next());
-			it1.remove();
-		}
-		System.out.println();
-		while (it1.hasNext()) {
-			System.out.print(it1.next());
-			it1.remove();
-		}
-		System.out.println();
-		*/
+
 		Integer i1 = null, i2 = null;
 		while (pit1.hasNext() && pit2.hasNext()) {
 			i1 = pit1.peek();
