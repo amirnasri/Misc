@@ -1,4 +1,3 @@
-package src;
 /*
  * A matrix of random numbers is given. Find the path from top-left corner to bottom-right corner for which 
  *  minimum of numbers on the path is maximized.
