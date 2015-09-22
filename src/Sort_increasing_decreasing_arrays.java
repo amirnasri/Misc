@@ -129,7 +129,7 @@ class Sort_increasing_decreasing_arrays {
 	}
 	
 	public static void main(String[] args) {
-		final int len = 20;
+		final int len = 100;
 		int[] array = new int[len];
 		Random rg = new Random();
 		for (int i = 0; i < len; i++)

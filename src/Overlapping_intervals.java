@@ -3,10 +3,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.ArrayList;
+import java.util.List;
 
 class Overlapping_intervals {
 	
-	private static final int m = 6;
+	private static final int m = 9;
 	private static Interval[] intervs;
 	
 	static class Interval {
@@ -22,7 +23,7 @@ class Overlapping_intervals {
 			this(0, 0);
 		}
 		void print() {
-			System.out.println("[" + l + ", " + h + "]");
+			System.out.print("[" + l + ", " + h + "]   ");
 		}
 	}
 
@@ -39,6 +40,12 @@ class Overlapping_intervals {
 					return 0;
 			}
 		});
+
+		for (Interval i: intervs) {
+			i.print();
+		}
+		System.out.println();
+
 		Interval curr = new Interval(intervs[0]);
 		Interval next;
 		for (int i = 1; i < m; i++) {
@@ -73,19 +80,27 @@ class Overlapping_intervals {
 		
 	
 		int open_intervs = 0;
-		Interval curr = new Interval(0, 0);
+		Interval curr = null;
 		for (int i = 0; i < points.size(); i++) {
 			int new_point = points.get(i)[0];
 			if (open_intervs == 0) {
-				curr.l = new_point;
+				if (curr == null) {
+					curr = new Interval(new_point, 0);
+				}
+				else {
+					if (new_point != curr.h) {
+						curr.print();
+						curr.l = new_point;
+					}
+				}
 			}
 			open_intervs += points.get(i)[1];
-			System.out.printf("(%d, %d)   ", new_point, open_intervs);
+			//System.out.printf("(%d, %d)   ", new_point, open_intervs);
 			if (open_intervs == 0) {
 				curr.h = new_point;
-				//curr.print();
 			}
 		}
+		curr.print();
 		System.out.println();
 	}
 	
@@ -98,6 +113,18 @@ class Overlapping_intervals {
 		intervs[3] = new Interval(7, 9);
 		intervs[4] = new Interval(10, 14);
 		intervs[5] = new Interval(3, 6);
+		intervs[6] = new Interval(14, 14);
+		intervs[7] = new Interval(14, 14);
+		intervs[8] = new Interval(14, 15);
+		
+		List<Interval> interv_list = Arrays.asList(intervs);
+		Collections.shuffle(interv_list);
+		intervs = (Interval[]) interv_list.toArray();
+
+		for (Interval i: intervs) {
+			i.print();
+		}
+		System.out.println();
 
 		find_overlaps(intervs);
 		System.out.println();
