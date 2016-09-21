@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Random;
+
 
 
 public class Binary_search {
@@ -59,7 +62,7 @@ public class Binary_search {
 		System.out.println();
 		
 		System.out.println(index);
-		System.out.println(String.format("%" + (int) (index *6 + 1) +"s", "-"));
+		System.out.println(String.format("%" +  (index *6 + 1) +"s", "-"));
 		
 	}
 

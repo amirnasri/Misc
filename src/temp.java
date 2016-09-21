@@ -2,7 +2,7 @@
  * Implement an algorithm to find the nth to last element of a singly linked list.
  */
 
-class CCI_Q2_2 {
+class temp {
 
 	static <T> Linked_list<T>.Node nth_to_last(Linked_list<T> ll, int n) {
 		Linked_list<T>.Node cur = ll.head.next;
