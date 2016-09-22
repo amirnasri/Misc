@@ -1,12 +1,13 @@
-N = 6 
-C = [7, 11, 5]
+N = 4
+C = [1, 2, 3]
 
 def find_change_coin(N, C):
     C = sorted(C, reverse = True)
     M = len(C)
     table = []
     table.append([1]* M)
-    
+    if M <= 0 or N < 0:
+        return 0
     for n in range(1, N + 1, 1):
         table.append([0] * M)
         for m in range(M):
