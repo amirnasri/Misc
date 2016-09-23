@@ -64,3 +64,31 @@ class Find_elements_with_sum_x {
 		
 	}
 }
+
+/*
+# python implementations
+import sys
+
+a = [4, 11, 1, 8, 12, 6, 3]
+a = sorted(a)
+print(a)
+
+l = 0
+r = len(a) -1
+
+sum = int(sys.stdin.readline())
+
+while True:
+	if (l >= r):
+		break
+	s = a[l] + a[r]
+	if (s < sum):
+		l += 1
+	elif (s > sum):
+		r -= 1
+	else:
+		print(a[l], a[r])
+		l += 1
+		r -= 1
+	
+*/

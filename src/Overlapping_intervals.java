@@ -1,3 +1,8 @@
+/*
+ * Given a list of intervals, merge overlapping intervals and print the resulting intervals.
+ * Todo: https://www.hackerrank.com/challenges/x-and-his-shots
+ */
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -22,8 +27,8 @@ class Overlapping_intervals {
 		Interval() {
 			this(0, 0);
 		}
-		void print() {
-			System.out.print("[" + l + ", " + h + "]   ");
+		public String toString() {
+			return "[" + l + ", " + h + "]   ";
 		}
 	}
 
@@ -42,7 +47,7 @@ class Overlapping_intervals {
 		});
 
 		for (Interval i: intervs) {
-			i.print();
+			System.out.print(i);
 		}
 		System.out.println();
 
@@ -51,18 +56,18 @@ class Overlapping_intervals {
 		for (int i = 1; i < m; i++) {
 			next = new Interval(intervs[i]);
 			if (curr.h < next.l) {
-				curr.print();
+				System.out.print(curr);
 				curr = next;
 			}
 			else {
-				curr.h = next.h;
+				curr.h = Math.max(curr.h, next.h);
 			}
 		}
 		
-		curr.print();
+		System.out.println(curr);
 	}
 	
-	// A better approad inspired by LaserShooting problem
+	// A better approach inspired by LaserShooting problem
 	static void find_overlaps1(Interval[] intervals) {
 		
 		ArrayList<Integer[]> points = new ArrayList<>();
@@ -89,19 +94,17 @@ class Overlapping_intervals {
 				}
 				else {
 					if (new_point != curr.h) {
-						curr.print();
+						System.out.print(curr);
 						curr.l = new_point;
 					}
 				}
 			}
 			open_intervs += points.get(i)[1];
-			//System.out.printf("(%d, %d)   ", new_point, open_intervs);
 			if (open_intervs == 0) {
 				curr.h = new_point;
 			}
 		}
-		curr.print();
-		System.out.println();
+		System.out.println(curr);
 	}
 	
 	public static void main(String[] args) {
@@ -122,12 +125,11 @@ class Overlapping_intervals {
 		intervs = (Interval[]) interv_list.toArray();
 
 		for (Interval i: intervs) {
-			i.print();
+			System.out.print(i);
 		}
 		System.out.println();
 
 		find_overlaps(intervs);
-		System.out.println();
 		find_overlaps1(intervs);
 		
 		
